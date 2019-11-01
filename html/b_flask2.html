@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style1.css" media="screen and (min-width:1500px)">
+    <link rel="stylesheet" href="../css/style2.css" media="screen and (max-width:1499px)">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="../js/file1.js"></script>
+    <title>goto</title>
+</head>
+
+
+
+<body>
+    <img src="../img-box/img/naiyo.png" alt="" id="naiyo">
+    <div class="all">
+        <!-- ヘッダー -->
+        <header id="header">
+            <nav>
+                <ul>
+                    <font size="2">
+                        <li class=""><a href="./z.top.html">一覧</a></li>
+
+                        <li>
+                            <div class="content">
+                                <a class="modal-new-open" href="">更新履歴</a>
+                            </div>
+                            <div class="modal modal-new">
+                                <div class="modal_n_i modal-new-close"></div>
+                                <div class="modal_n_c">
+                                    <p>2019.10.24 </p>
+                                    <a class="modal-new-close" href="">閉じる</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="content">
+                                <a class="modal-here-open" href=""> ここ何？</a>
+                            </div>
+                            <div class="modal modal-here">
+                                <div class="modal_h_i modal-here-close"></div>
+                                <div class="modal_h_c">
+                                    <p id="modal-h-text">後藤の後藤による後藤のための備忘録<br><br>
+                                        ターゲット：後藤　目的：脳みそのUSB(?)ほしい<br>
+
+                                        クレーム云々は受け付けてないけど<br>
+                                        ちゃまは何かあったら教えてね♡<br>
+                                        他の方も何かあればフォームからどうぞ<br>
+                                        スマホ対応はしていません<br>
+                                        ラーメン食べたい</p>
+                                    <a class="modal-here-close" href="">閉じる</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="content">
+                                <a class="modal-form-open" href="#">フォーム</a>
+                            </div>
+                            <div class="modal modal-form">
+                                <div class="modal_f_i modal-form-close"></div>
+                                <div class="modal_f_c">
+                                    <p></p>
+                                    <a class="modal-form-close" href="">閉じる</a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </font>
+                </ul>
+            </nav>
+        </header>
+        <br><br><br>
+
+        <!-- メイン -->
+        <a id="flask_top"></a>
+        <div class="nav_all nav_flask">
+            <ul>
+                <li><a href="./b_flask.html">目的別</a></li>
+                <li class="current"><a href="">基本</a></li>
+                <li><a href="./b_flask3.html">困ったとき</a></li>
+            </ul>
+        </div>
+
+        <a href="#flask_top">
+            <div class="namako nama_ko"></div>
+        </a>
+
+
+        <div class="page">
+            <div class="title">Flask</div><br><br>
+
+            <div class="table_vscode">
+                <a href="#flask_kihon"><img src="../img/fla1.png" alt="" class="table_icon"></a>
+                <a href="#flask_wild"><img src="../img/fla2.png" alt="" class="table_icon"></a>
+                <a href="#flask_hensu"><img src="../img/fla3.png" alt="" class="table_icon"></a>
+                <a href="#flask_db"><img src="../img/fla4.png" alt="" class="table_icon"></a>
+                <a href="#flask_for"><img src="../img/fla5.png" alt="" class="table_icon"></a>
+                <a href="#flask_nyuryo"><img src="../img/fla6.png" alt="" class="table_icon"></a>
+            </div>
+
+            <!-- <a href="#flask_top">トップ</a><br> -->
+
+            <div class="page2">
+
+                <img src="../img/tep.png" alt="">まじで何あのフォント<br><br>
+
+                <b>■とりあえず入れとけ</b><br>
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+import sqlite3
+<span class="h"># renderを使う場合はimport Flaskの後ろに上記の文(,以降)をつける</span>
+from flask import Flask, render_template, request, redirect, session
+app = Flask(__name__)
+
+<span class="h"># app.run(debug=True)でデバッガーはオンにしておこう デフォルトだとオフになってるよ</span>
+if __name__ == "__main__":
+app.run(debug=True)</pre>
+                </div>
+                <br><br><br><br><br>
+
+                <a id="flask_kihon"><b>■基本構造</b></a><br>
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●python
+
+@app.route('/urlになる部分 任意')
+def いい感じの関数名():
+    処理
+    return 戻り値</pre>
+                </div>
+                <div class="memo">Q.renderとredirectの違いは?　A.<a
+                        href="https://qiita.com/january108/items/54143581ab1f03deefa1">ここ</a>とか読んでくれ</div>
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●html(ベース)
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width={device-width}, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    <span class="h">&lt;!-- flaskからの相対パスになるので注意 こっから目線で通そうとすると通らない↓ --&gt;</span>
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/css/style.css&quot;&gt;
+    &lt;script src=&quot;/static/js/jquery-3.4.1.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;/static/js/common.js&quot;&gt;&lt;/script&gt;
+    &lt;title&gt;任意のタイトル&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    <span class="h">&lt;!-- 変わらず毎回表示される場所がこのスペース ヘッダーとか入れとく --&gt;</span>
+
+    {% block content %}
+    <span class="h">&lt;!-- ここにリンクさせた内容(任意のページ.html)が入る --&gt;</span>
+    {% endblock %}
+
+    <span class="h">&lt;!-- 内容増やしたい場合はcontent2とかで括っておけばいけるよ --&gt;</span>
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                </div><br>
+
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●html(他)  黄色いにょろにょろ出るけど赤じゃないなら大丈夫
+
+{% extends "ベースのhtmlのファイル名" %}
+{% block content %}
+
+<span class="h">&lt;!-- ここに内容 --&gt;</span>
+
+{% endblock %}</pre>
+                </div>
+                <div class="memo">CSSとか他のはいつも通り</div>
+                <br><br><br><br><br>
+
+
+
+
+                <b>■そのまま内容表示</b><br>
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●python
+
+@app.route('/')
+def hello_world():
+    return "Hello World!"</pre>
+                </div>
+                <div class="memo">ターミナルで開くと * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)みたいなのが出てくるから<br>
+                    それ開けばOK urlの末尾/にすると「Hello World!」って表示される</div>
+                <br><br><br><br><br>
+
+
+
+
+
+                <a id="flask_wild"><b>■ワイルドカード urlに打ち込んだ内容使って表示(意外と使う)</b></a><br>
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●python
+
+@app.route('/user/&lt;name&gt;')
+def user(name):
+    return name+"さん 合掌"</pre>
+                </div>
+                <div class="memo">urlに/user/&lt;仏陀&gt;とか入れると「仏陀さんこんにちは」って表示される</div>
+                <br><br><br><br><br>
+
+
+
+
+
+
+                <a id="flask_hensu"><b>■htmlに変数突っ込んで表示させる</b></a><br>
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●python　変数名は好きなの使っていいよ　今回はnameとageとaddress
+
+@app.route('/temptest')
+def temptest():
+    name = "ち"
+    age = 23
+    address = "アメリカ"
+
+<span class="h">    # こんな変数使ったやで～って（）の中に一緒に書いて定義しとく↓
+    # なお(例)name=name の内訳はhtmlで使う方=pythonで宣言してる方
+    # 例えば下でchi=name って書いてhtml側で{{}}の中にchiって入れとけばちゃんとちって表示される</span>
+    return render_template("index.html", name=name, age=age, address=address)</pre>
+                </div> <br>
+
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●html (今回ファイル名はindex.html)
+
+{% extends &quot;base.html&quot; %}
+{% block content %}
+
+<span class="h">&lt;!-- pythonで宣言した変数を{{}}に突っ込んでおいとく --&gt;</span>
+&lt;p&gt;名前：{{name}}&lt;/p&gt;
+&lt;p&gt;年齢：{{age}}&lt;/p&gt;
+&lt;p&gt;住所：{{address}}&lt;/p&gt;
+
+{% endblock %}</pre>
+                </div>
+                <div class="memo">実行するといい感じになるよ</div>
+                <br><br><br><br><br>
+
+
+
+
+
+                <a id="flask_db"><b>■データベースから要素取り出して表示する</b></a><br>
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●python (usersテーブルからname,age,addressを取り出すよ)
+
+@app.route('/dbtest')
+def dbtest():
+<span class="h">    # データベースに接続↓</span>
+    conn = sqlite3.connect("flasktest.db(データベースの名前)")
+
+<span class="h">    # 中を見る↓</span>
+    c = conn.cursor()
+
+<span class="h">    # SQLを実行する SQL文を書く</span>
+    c.execute("SELECT name,age,address FROM users WHERE id=1")
+
+<span class="h">    # タプル型で格納される</span>
+    user_info = c.fetchone()
+
+    <span class="h"># データベースの接続を終了しなければならない↓</span>
+    c.close()
+    return render_template("dbtest.html", user_info=user_info)</pre>
+                </div>
+                <div class="memo">fetchall:全部のレコードの結果をもってくる<br>
+                    fetchmany:指定された行数のデータをもってくる<br>
+                    fetchone:１件ずつデータをもってくる</div>
+
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●html (今回ファイル名はdbtest.html)
+
+{% extends &quot;base.html&quot; %}
+{% block content %}
+
+<span class="h">&lt;!-- pythonで宣言した変数はタプル型なので{{タプル[インデックス番号]}}で値を取り出せる --&gt;</span>
+&lt;p&gt;名前：{{user_info[0]}}&lt;/p&gt;
+&lt;p&gt;年齢：{{user_info[1]}}&lt;/p&gt;
+&lt;p&gt;住所：{{user_info[2]}}&lt;/p&gt;
+
+{% endblock %}</pre>
+                </div>
+                <div class="memo">実行するといい感じになるよ</div>
+                <br><br><br><br>
+                <br>
+
+
+
+
+
+
+                <a id="flask_for"><b>■データベースから複数のレコードを取り出し表示（繰り返し)</b></a><br>
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●python (今回はlistって名前のテーブルからtitleとtextって名前のカラムの内容を取り出す)
+
+@app.route('/list_page')
+def post_page():
+    conn = sqlite3.connect('database.db')データベースの名前
+    c = conn.cursor()
+
+    <span class="h"># 必要な情報を取り出すSQL文を書く 今回は5件出すよ↓</span>
+    c.execute("select title,text FROM list LIMIT 5")
+    text_list = []
+
+    <span class="h"># 辞書型で格納</span>
+    for row in c.fetchall():
+    text_list.append({"title":row[0] ,"text":row[1]})
+    c.close()
+    return render_template('list_page.html', text_list=text_list)</pre>
+                </div>
+                <br>
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●html(表示する内容がある限りforでくくった中身の表示を繰り返す list_page.html)
+
+{% extends &#039;base.html&#039; %}
+{% block content %}
+
+{% for item in text_list %}
+
+<span class="h">&lt;!-- {{item[&quot;キーの名前&quot;]}}で要素を取り出す --&gt;</span>
+&lt;p&gt;{{item[&quot;title&quot;]}}&lt;/p&gt;
+&lt;p&gt;{{item[&quot;text&quot;]}}&lt;/p&gt;
+
+{% endfor %}
+
+{% endblock %}</pre>
+                </div>
+                <div class="memo">実行するといい感じになるよ</div>
+                <br><br><br><br>
+                <br>
+
+
+
+
+                <a id="flask_nyuryo"><b>■データの入力を受け付ける</b></a><br>
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●python (listテーブルにtitleとtextを入力)
+
+@app.route('/add_list', methods=["POST"])
+def add_post_yeah():
+    conn = sqlite3.connect('database.db')
+    c = conn.cursor()
+
+    <span class="h"># 入力された値を受け取る requestのインポートを忘れずに(上の方のimportのとこ)</span>
+    title = request.form.get("title")
+    text = request.form.get("text")
+
+    <span class="h"># ?の数だけ後ろの()に入る物を書くよ
+    # たとえ？が一つでも後ろの()の中に,を入れてタプル型にするよ（例）(title,)
+    # 今回は何処にって書かなくてもいいのでVALUESをいきなり書いてOK</span>
+    c.execute("insert into list values(null,?,?)",(title,text))
+
+    <span class="h"># データベースの変更を書き込み</span>
+    conn.commit()
+    <span class="h"># 閉じる</span>
+    c.close()
+    return redirect("/list_page")</pre>
+                </div>
+                <br>
+
+                <div class="kuro sourceview">
+                    <pre class="brush: html;">
+●html (add_list.html 入力受け取れれば何でも良い ひとつ前のlist_pageとかに飛ばすといい感じ)
+
+{% extends &quot;base.html&quot; %}
+{% block content %}
+
+&lt;form action=&quot;/add_list&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+&lt;label&gt;タイトル:&lt;/label&gt;
+&lt;input type=&quot;text&quot; size=&quot;100&quot; maxlength=&quot;100&quot; name=&quot;title&quot;&gt;
+
+&lt;label&gt;コメント:&lt;/label&gt;
+&lt;input type=&quot;text&quot; size=&quot;100&quot; maxlength=&quot;100&quot; name=&quot;text&quot;&gt;
+&lt;button type=&quot;submit&quot;&gt;投稿する&lt;/button&gt;
+&lt;/form&gt;
+
+{% endblock %}</pre>
+                </div>
+                <div class="memo">値が入力されたかデータベースで確認してみよう</div>
+            </div>
+        </div>
+        <br>
+        <br><br>
+
+    </div>
+</body>
+
+</html>
