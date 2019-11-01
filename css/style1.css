@@ -125,9 +125,10 @@ nav li:hover {
     left: 50%;
     padding: 20px;
     position: absolute;
-    top: 35%;
+    top: 50%;
     transform: translate(-155%, -120%);
     width: 30%;
+    line-height: 2em;
 }
 
 /* ページごとのメニューの色--------------------------------- */
@@ -505,5 +506,5 @@ pre {
 }
 
 .counter {
-    display:none;
+    display: none;
 }
