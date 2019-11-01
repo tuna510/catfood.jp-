@@ -6,7 +6,7 @@ function header_dayo() {
     html += '<nav>';
     html += '<ul>';
     html += '<font size="2">';
-    html += '<li class="current"><a href="">一覧</a></li>';
+    html += '<li class="current"><a href="../index.html">一覧</a></li>';
     html += '<li>';
     html += '<div class="content">';
     html += '<a class="modal-new-open" href="">更新履歴</a>';
