@@ -503,3 +503,7 @@ pre {
         background-position: -960px 0;
     }
 }
+
+.counter {
+    display:none;
+}
