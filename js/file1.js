@@ -50,7 +50,6 @@ function header_dayo() {
     html += '・flaskとかhtml&cssとかのコード欄 言語で背景の色変える？コードに色つけてから検討<br>';
     html += '・途中で挟む画像の幅大きくする？<br>';
     html += '・ボタンの形変更<br>';
-    html += '・top以外のヘッダーの内容統一するよ<br>';
     html += '・下段(JS5とか)のページは内容書くときに整えます<br>';
     html += '・内容自体はぼちぼち更新<br></p>';
     html += '<a class="modal-form-close" href="">閉じる</a>';
