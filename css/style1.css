@@ -82,7 +82,7 @@ nav li:hover {
     left: 50%;
     padding: 20px;
     position: absolute;
-    top: 43%;
+    top: 55%;
     transform: translate(-155%, -200%);
     width: 30%;
 }
@@ -474,24 +474,15 @@ pre {
 
 
 /* なまこ----------------------------------------- */
-.namako {
+.nama_ko {
     position: fixed;
+    width: 130px;
+    height: 130px;
     left: 80%;
     top: 76%;
     padding: 20px;
-    width: 150px;
-    height: 150px;
     text-align: center;
-}
-
-
-.nama_ko {
     background: url(../img-box/img/namako_2.png) no-repeat;
-    width: 130px;
-    height: 130px;
-}
-
-.nama_ko {
     animation-play-state: paused;
 }
 
