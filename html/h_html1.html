@@ -189,6 +189,91 @@ nav li:hover {
             </div><br><br><br>
 
 
+            <a id="html_scroll"></a><b>■スクロール</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">●HTML
+<span class="h">&lt;!-- リンク --&gt;</span>
+&lt;a href=&quot;#飛ばしたいところのidの頭に#&quot;&gt;文字とか画像とか&lt;/a&gt;
+
+<span class="h">&lt;!-- 飛ばしたいところ --&gt;</span>
+&lt;a id=&quot;任意のid&quot;&gt;&lt;/a&gt;</pre>
+            </div>
+            <div class="memo">ぬるぬるスクロールにしたい場合は<a href="../html/j.js5.html#js_scroll">こちら</a>　リンク位置は後ほど調整</div><br>
+
+            <br><br><br>
+            <b>■マウスを乗せたら画像をちょっと拡大</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">●css
+<span class="h">/* HTMLには画像とか設定しておく */</span>
+.クラス名 {
+    width: 165px;
+    height: 72px;
+    <span class="h">/* 大きくしたの戻す */</span>
+    transform: scale(1.0);
+    transition-duration: 0.5s;
+}
+
+<span class="h">/* ほわってさせる */</span>
+.クラス名:hover {
+    <span class="h">/* 大きくする */</span>
+    transform: scale(1.2);
+    transition-duration: 0.3s;
+}</pre>
+            </div><br><br><br>
+
+            <b>■stepsでアニメーション</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">●html
+
+<span class="h">&lt;!-- 画像はcssで指定するのでここには貼らなくて良い --&gt;</span>
+&lt;div class=&quot;クラス名&quot;&gt;&lt;/div&gt;</pre>
+            </div><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">●css
+
+<span class="h">/* 今回は幅1120px,7枚の画像を右→左に配置してる */</span>
+.クラス名 {
+position: fixed;
+width: 130px;
+height: 130px;
+left: 80%;
+top: 76%;
+padding: 20px;
+text-align: center;
+background: url(画像のパス) no-repeat;
+animation-play-state: paused;
+}
+
+.nama_ko:hover {
+<span class="h">/* 6回切り替えてアニメーション */</span>
+animation: mochi .4s steps(6) forwards;
+}
+
+@keyframes mochi {
+100% {
+<span class="h">/* 1120/7→一枚幅160pxを6回動かす→-960px */</span>
+background-position: -960px 0;
+}
+}
+                </pre>
+            </div><br>
+
+
+        </div><br>
+
+        <b>■</b><br>
+        <div class="kuro sourceview">
+            <pre class="brush: html;"></pre>
+        </div><br>
+        <b>■</b><br>
+        <div class="kuro sourceview">
+            <pre class="brush: html;"></pre>
+        </div><br>
+        <b>■</b><br>
+        <div class="kuro sourceview">
+            <pre class="brush: html;"></pre>
+        </div><br>
+
             <b>■</b><br>
             <div class="kuro sourceview">
                 <pre class="brush: html;"></pre>
