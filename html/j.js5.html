@@ -14,7 +14,7 @@
 
 
 <body>
-    <img src="../img-box/img/naiyo.png" alt="" id="naiyo">
+    <img src="./img-box/img/naiyo.png" alt="" id="naiyo">
     <div class="all">
         <script type="text/javascript">
             header_dayo();
@@ -42,11 +42,34 @@
                         </div> -->
 
             <!-- <a href="#flask_top">トップ</a><br> -->
+            <a id="js_scroll"></a><b>■ぬるぬるスクロール</b>　htmlは<a
+                href="../html/h_html1.html#html_scroll">こちら</a>　リンク位置は後ほど調整<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">●jquery
 
-            <!-- <b>■とりあえず入れとけ</b><br>
-    <div class="kuro sourceview">
-        <pre class="brush: html;"></pre>
-    </div><br> -->
+<span class="h">// #をつけたリンクから該当のidまでぬるぬるスクロール</span>
+$(function () {
+    $('a[href^="#"]').click(function () {
+        var href = $(this).attr("href");
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        <span class="h">// 飛ばす位置の指定(-100pxに設定してます)</span>
+        var position = target.offset().top - 100;
+        <span class="h">// スクロールの速度</span>
+        var speed = 600;
+        $('body,html').animate({
+            scrollTop: position
+        }, speed, 'swing');
+        return false;
+    });
+});</pre>
+            </div><br>
+
+            <br><br>
+
+            <b>■</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;"></pre>
+            </div><br>
         </div>
     </div>
 </body>
