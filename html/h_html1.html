@@ -164,7 +164,7 @@ nav li:hover {
 
 .box {
     <span class="h">/* 余白 */</span>
-    margin: 100px auto;
+    margin: 高さ auto(幅);
     <span class="h">/* 中央寄せ */</span>
     text-align: center;
 }
@@ -172,15 +172,15 @@ nav li:hover {
 .main-box-all {
     <span class="h">/* 横並びにする */</span>
     display: inline-block;
-    <span class="h">大きさ</span>
-    height: 250px;
-    width: 250px;
+
+    height: 幅;
+    width: 高さ;
     <span class="h">余白とか</span>
-    padding: 0.5em 1em;
-    margin: 2em 1em;
+    padding: 任意;
+    margin: 任意;
     text-align: center;
-    <span class="h">色</span>
-    background: white;
+    background: 文字色;
+    
     <span class="h">影</span>
     filter: drop-shadow(0 3px 3px rgba(176, 186, 187, 0.747));
 }
@@ -207,16 +207,16 @@ nav li:hover {
                 
 <span class="h">/* HTMLには画像とか設定しておく */</span>
 .クラス名 {
-    width: 165px;
-    height: 72px;
-    <span class="h">/* 大きくしたの戻す */</span>
+    width: 幅;
+    height: 高さ;
+    <span class="h">/* 大きくしたの戻す(割合、速さ) */</span>
     transform: scale(1.0);
     transition-duration: 0.5s;
 }
 
 <span class="h">/* ほわってさせる */</span>
 .クラス名:hover {
-    <span class="h">/* 大きくする */</span>
+    <span class="h">/* 大きくする(割合、速さ) */</span>
     transform: scale(1.2);
     transition-duration: 0.3s;
 }</pre>
@@ -234,12 +234,11 @@ nav li:hover {
 
 <span class="h">/* 今回は幅1120px,7枚の画像を右→左に配置してる */</span>
 .クラス名 {
-position: fixed;
-width: 130px;
-height: 130px;
-left: 80%;
-top: 76%;
-padding: 20px;
+position: 任意 固定したいならfixed;
+width: 幅;
+height: 高さ;
+leftとかtopとか: 固定したい位置;
+padding: 余白;
 text-align: center;
 background: url(画像のパス) no-repeat;
 animation-play-state: paused;
