@@ -79,8 +79,9 @@ function header_dayo() {
     html += '<div class="modal modal-new">';
     html += '<div class="modal_n_i modal-new-close"></div>';
     html += '<div class="modal_n_c">';
-    html += '<p>2019.11.3 　htm&css、js5#jquery更新</p>';
-    html += '<p>2019.11.1 　とりあえず公開</p>';
+    html += '<p>2019.11.05 　js5&jqueryちょっと更新</p>';
+    html += '<p>2019.11.03 　htm&css、js5&jquery更新</p>';
+    // html += '<p>2019.11.1 　とりあえず公開</p>';
     html += '<a class="modal-new-close" href="">閉じる</a>';
     html += '</div>';
     html += '</div>';
