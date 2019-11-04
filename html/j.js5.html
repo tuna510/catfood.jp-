@@ -40,14 +40,14 @@
                             <a href="#flask_for"><img src="" alt="" class="table_icon"></a>
                             <a href="#flask_nyuryo"><img src="" alt="" class="table_icon"></a>
                         </div> -->
-            
-                        <b>■jqueryのダウンロード(あとで画像つけて環境構築に入れとく)</b><br>
+
+            <b>■jqueryのダウンロード(あとで画像つけて環境構築に入れとく)</b><br>
             <a href="https://jquery.com/download/">ここ</a>のDownload the uncompressed, development jQuery 3.4.1を<br>
             右クリックして「名前をつけて保存」、後はjsのファイルにぶちこむだけ<br>
             あとはいろんなプラグインがあるから興味あるやつがあれば入れてけばOK　プラグインの種類も後でまとめる<br>
             <br><br>
-            
-                        <b>■js5&jqueryの読み込み</b><br>
+
+            <b>■js5&jqueryの読み込み</b><br>
             <div class="kuro sourceview">
                 <pre class="brush: html;">●html
 
@@ -81,6 +81,27 @@ $(function () {
             </div><br>
 
             <br><br>
+
+            <b>■ヘッダーの高さ分だけコンテンツを下げる</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">●jquery
+
+$(function () {
+var height = $("#header").height();
+<span class="h">// 余裕を持たせ対場合はheightの後ろに+任意の数字</span>
+$("body").css("margin-top", height);
+});</pre>
+            </div><br>
+
+            <b>■</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;"></pre>
+            </div><br>
+
+            <b>■</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;"></pre>
+            </div><br>
 
             <b>■</b><br>
             <div class="kuro sourceview">
