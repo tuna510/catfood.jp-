@@ -42,7 +42,8 @@
                         </div> -->
 
             <b>■jqueryのダウンロード(あとで画像つけて環境構築に入れとく)</b><br>
-            <a href="https://jquery.com/download/" target="_blank">ここ</a>のDownload the uncompressed, development jQuery 3.4.1を<br>
+            <a href="https://jquery.com/download/" target="_blank">ここ</a>のDownload the uncompressed, development jQuery
+            3.4.1を<br>
             右クリックして「名前をつけて保存」、後はjsのファイルにぶちこむだけ<br>
             あとはいろんなプラグインがあるから興味あるやつがあれば入れてけばOK　プラグインの種類も後でまとめる<br>
             <br><br>
@@ -87,15 +88,55 @@ $(function () {
                 <pre class="brush: html;">●jquery
 
 $(function () {
-var height = $("#header").height();
-<span class="h">// 余裕を持たせ対場合はheightの後ろに+任意の数字</span>
-$("body").css("margin-top", height);
+    var height = $("#header").height();
+    <span class="h">// 余裕を持たせ対場合はheightの後ろに+任意の数字</span>
+    $("body").css("margin-top", height);
 });</pre>
+            </div><br><br><br>
+
+
+            <b>■スクロールで要素をフェードインさせる</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">●html
+
+&lt;div class=&quot;クラス名&quot;&gt;文字や画像など&lt;/div&gt;</pre>
             </div><br>
 
-            <b>■</b><br>
             <div class="kuro sourceview">
-                <pre class="brush: html;"></pre>
+                <pre class="brush: html;">●css
+
+.クラス名 {
+opacity: 0;
+-webkit-transition: all 1s;
+-moz-transition: all 1s;
+-o-transition: all 1s;
+-ms-transition: all 1s;
+transition: all 1s;
+
+}
+
+.fade_on {
+opacity: 1;
+}</pre>
+            </div><br>
+
+            <div class="kuro sourceview">
+                <pre class="brush: html;">●jquery
+
+$(function () {
+    $(window).scroll(function () {
+        $(".クラス名").each(function () {
+            var imgPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            <span class="h">// windowHeight / 3の部分で文字が出るタイミング調整</span>
+            if (scroll &gt; imgPos - windowHeight + windowHeight / 3) {
+                <span class="h">// fade_onクラスを付与</span>
+                $(this).addClass("fade_on");
+            }
+        });
+    });
+});</pre>
             </div><br>
 
             <b>■</b><br>
