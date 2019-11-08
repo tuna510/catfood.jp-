@@ -499,3 +499,13 @@ pre {
 .counter {
     display: none;
 }
+
+/* studio----------------------------------------- */
+
+.img_width {
+    width: 68%;
+}
+
+.img_width img {
+    width: 100%;
+}
