@@ -178,6 +178,14 @@ nav li:hover {
     background-color: #b599e2c0;
 }
 
+.nav_java ul li.current {
+    background-color: rgba(210, 174, 120, 0.836);
+}
+
+.nav_java ul li:hover {
+    background-color: #a6deffc0;
+}
+
 /* -------------------------------------------------- */
 
 /* ■TOP＞メイン------------------------------------ */
@@ -278,6 +286,24 @@ nav li:hover {
 }
 
 .box-studio:hover {
+    filter: drop-shadow(0 7px 7px rgba(155, 166, 167, 0.747));
+}
+
+.box-java {
+    color: #70727c;
+    border-top: solid 5px #D2AE78;
+}
+
+.box-java:hover {
+    filter: drop-shadow(0 7px 7px rgba(155, 166, 167, 0.747));
+}
+
+.box-php {
+    color: #70727c;
+    border-top: solid 5px #c6BAEA;
+}
+
+.box-php:hover {
     filter: drop-shadow(0 7px 7px rgba(155, 166, 167, 0.747));
 }
 
