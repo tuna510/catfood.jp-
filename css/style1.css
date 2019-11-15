@@ -186,6 +186,14 @@ nav li:hover {
     background-color: #a6deffc0;
 }
 
+.nav_php ul li.current {
+    background-color: #C6BAEA;
+}
+
+.nav_php ul li:hover {
+    background-color: #c7ffa6c0;
+}
+
 /* -------------------------------------------------- */
 
 /* ■TOP＞メイン------------------------------------ */
