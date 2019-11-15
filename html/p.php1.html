@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style1.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="../js/file1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="../img-box/img/naiyo.png" alt="" id="naiyo">
+    <div class="all">
+        <!-- ヘッダー -->
+        <script type="text/javascript">
+            header_dayo();
+        </script>
+        <br><br><br>
+
+        <!-- なまこ -->
+        <a href="#flask_top">
+            <div class="nama_ko"></div>
+        </a>
+        <!-- 項目別メニュー -->
+        <a id="flask_top"></a>
+        <div class="nav_all nav_php">
+            <ul>
+                <li><a href="">目的別</a></li>
+                <li class="current"><a href="">基本</a></li>
+                <li><a href="">困ったとき</a></li>
+            </ul>
+        </div>
+        <div class="page">
+            <div class="title">PHP</div><br><br>
+
+            <!-- ページ内リンク -->
+            <!-- <div class="table_vscode">
+                <a href="#flask_kihon"><img src="" alt="" class="table_icon"></a>
+                <a href="#flask_wild"><img src="" alt="" class="table_icon"></a>
+                <a href="#flask_hensu"><img src="" alt="" class="table_icon"></a>
+                <a href="#flask_db"><img src="" alt="" class="table_icon"></a>
+                <a href="#flask_for"><img src="" alt="" class="table_icon"></a>
+                <a href="#flask_nyuryo"><img src="" alt="" class="table_icon"></a>
+            </div> -->
+            <!-- メイン -->
+            <b>■PHPって？</b><br>
+            動的にWebページを生成することができるサーバーサイドのスクリプト言語。<br>
+            ユーザーからデータを受け取ってそれを表示したりとか、動的な機能を作れる。SQLとの連携もできちゃう。<br>
+            動的だけど静的ページを作るHTMLの中にぶちこんでいくよ<br>
+            <br><br>
+            <b>■基本</b><br>
+            PHPはHTMLに埋め込んで使うよ！<br>
+            HTMLの中に入ってるという大前提でこれから書いてくサンプルコードはこの中に入ってると思ってね<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">&lt;?php 
+    <span class="h">// ここにコードを書いていく</span>
+?&gt;</pre>
+            </div><br><br><br>
+
+            <b>■文字列の出力</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;"><span class="h">// コメントアウト可能</span>
+echo '文末はセミコロンで区切るよ！';
+echo "文を囲むクォーテーションはシングルでもダブルでもいいよ";
+
+<span class="h">// 整数にはクォーテーションは要らない</span>
+echo 1 + 1;</pre>
+            </div><br><br><br>
+
+            <b>■変数</b> 頭に「$」をつける<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">$name = "Maria";
+echo $name;  <span class="h">// 結果：Maria</span>
+
+<span class="h">// 正方形の面積を計算</span>
+$length = 5;
+&area = $length * $length;
+echo = $area;  <span class="h">// 結果：25</span>
+
+
+<span class="h">// 上書き</span>
+$num = 3;
+echo $num;  <span class="h">// 結果：3</span>
+$num = 5;
+echo $num;  <span class="h">// 結果：5</span></pre>
+            </div><br><br><br>
+
+            <b>■連結</b> 連結はドット(.)で行う<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">$test = "Hello";
+echo $test." muscle";
+
+<span class="h">// .=を用いると変数と文字列の連結を省略して書ける</span>
+$test = "Hello";
+$test .=" muscle";
+echo $test;  <span class="h">// 結果：Hello muscle</span>
+
+<span class="h">// ダブルクォーテーションで文字を囲んでいる場合は変数を{}で囲むと置き換えられる（変数展開）
+// シングルだと{}がそのまま出力される</span>
+$la = "ラ";
+echo "ヴィヴ・{$la}・フランス！"  <span class="h">// 結果：ヴィヴ・ラ・フランス！</span></pre>
+            </div><br><br><br>
+
+            <b>■if文</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">$x = 10;
+if($x &gt; 5) {
+  echo &quot;$xは5より大きい&quot;;
+} <span class="h">// 結果：$xは5より大きい　（trueのためechoが実行される）</span>
+
+<span class="h">// 等しいときture == , 等しくないときtrue !=</span>
+
+<span class="h">// elseとか他の条件足したいときとか</span>
+$x = 10;
+if($x &gt; 20) {
+  echo &quot;$xは20より大きいです&quot;;
+} elseif($x == 20) {
+  echo &quot;$xは20です&quot;;
+} else {
+  echo &quot;$xは20より小さいです&quot;
+}</pre>
+            </div><br><br><br>
+
+            <b>■論理演算子</b><br>
+            &&：かつ　||：または<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">$x = 10;
+
+if($x &gt;=10 &amp;&amp; $x &lt; 20) {
+  echo &quot;$xは10以上、かつ20未満なら実行って意味だよ&quot;;
+}
+if($x &lt; 30 || $x &gt;= 45) {
+  echo &quot;$xは30未満、または45以上なら実行って意味だよ&quot;;
+}
+
+if(!($x == 30)) {
+  echo &quot;()の前に!をつけてさらに()で囲むと条件の否定になるよ 今回は$xは30以外&quot;;
+}</pre>
+            </div><br><br><br>
+
+            <b>■switct文</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">switch($coin) {
+    case 0:　<span class="h">// coinが0のとき。ただのコロンなので注意</span>
+        echo &quot;表&quot;;
+        break;　<span class="h">// breakがないと次のcaseブロックも実行されてしまう</span>
+    case 1:　<span class="h">// coinが1のとき</span>
+        echo &quot;裏&quot;;
+        break;
+    default:　<span class="h">// それ以外</span>
+        echo &quot;エラー&quot;;
+        break;
+}</pre>
+            </div><br><br><br>
+
+            <b>■配列</b><br>
+            ひとつの変数に複数の値をまとめて保存できる。pythonのリストみたいな<br>
+            $配列名 = array(値１, 値2, ・・・);のかたち<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">$names = array(&quot;Maria&quot;,&quot;Abbie&quot;,&quot;Bunyan&quot;);　<span class="h">// インデックス番号は0,1,2...</span>
+<span class="h">// 取り出し方</span>
+echo $names[0];　<span class="h">// 結果：Maria</span>
+echo $names[1];　<span class="h">// 結果：Abbie</span>
+
+<span class="h">// 値の追加、上書き</span>
+$names[] = &quot;Oda&quot;;　<span class="h">// 配列の末尾に値を追加</span>
+$names[1] = &quot;Yog-Sothoth&quot;;　<span class="h">// 値の上書き</span></pre>
+            </div><br><br><br>
+
+            <b>■連想配列</b><br>
+            インデックス番号では無くキーで管理　pythonの辞書みたいな<br>
+            $配列名 = array(&quot;キー&quot;=&gt;&quot;値1&quot;、……);のかたち<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">$user = array(
+    &quot;name&quot; =&gt; &quot;ち&quot;,
+    &quot;age&quot; =&gt; 23,
+    &quot;gender =&gt; &quot;man&quot;
+);
+
+// 取り出し方
+echo $user[&quot;name&quot;];　<span class="h">// 結果：ち</span>
+
+<span class="h">// 追加方法、計算</span>
+$user[&quot;attribute&quot;] = &quot;cute&quot;;　<span class="h">// キーと値の追加 =&gt;ではない</span>
+$user[&quot;age&quot;] ++;　<span class="h">// ageが24になる 例えば+=5なら+5</span></pre>
+            </div><br><br><br>
+
+            <b>■foreach文</b><br>
+            配列or連想配列に対して、先頭のデータから順に繰り返し処理を行うための命令文<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;"><span class="h">// 配列</span>
+$names = array(&quot;Maria&quot;,&quot;Abbie&quot;,&quot;Bunyan&quot;);
+foreach($names as $value) {　<span class="h">// foreach(配列か連想配列 as 値変数)</span>
+    echo $value;　<span class="h">// 繰り返したい処理</span>
+}　<span class="h">// 結果：Maria Abbie Bunyan</span>
+
+<span class="h">// 連想配列</span>
+$user = array(
+    &quot;name&quot; =&gt; &quot;ち&quot;,
+    &quot;age&quot; =&gt; 23,
+    &quot;gender =&gt; &quot;man&quot;
+);
+foreach($user as $key as $value) {　<span class="h">// foreach(配列か連想配列 as キー変数 =&gt; 値変数)</span>
+    echo $key.&#039;:&#039;.$value;　<span class="h">// 繰り返したい処理</span>
+}　<span class="h">// 結果：name:ち age:23 gender:man</span></pre>
+            </div>
+            <br><br><br>
+
+            <b>■for文</b><br>
+            for(①初期化 ; ②ループの条件 ; ④変数の更新) { ③繰り返し処理 }のかたち<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;"><span class="h">// 1から100までを出力する</span>
+for($i=1; Si&lt;=100; $1++) {
+    echo $i.&#039;&lt;br&gt;&#039;;　<span class="h">// .&#039;&lt;br&gt;&#039;で改行 下にecho&#039;&lt;br&gt;&#039;;を書いても良い</span>
+}</pre>
+            </div>
+            <br><br><br>
+
+            <b>■while文</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;"><span class="h">// 1から100までを出力する</span>
+$i = 1;　<span class="h">// 初期化</span>
+while($i &lt;= 100) {　<span class="h">// ループの条件</span>
+    echo $i.&#039;&lt;br&gt;&#039;;　<span class="h">// 繰り返し処理</span>
+    $i++;　<span class="h">// 変数の更新</span>
+}</pre>
+            </div>
+            <br><br><br>
+
+            <b>■break文</b><br>
+            ループを強制的に中断する（一部だけ飛ばしたいときは下記continue文を使おう）<br>
+            if文などの条件と合わせて組み合わせるのが一般的らしい<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">for($i=1; Si&lt;=10; $1++) {
+    if($i &gt; 5) {
+    break;　<span class="h">// この条件だと$iが6になった時点で終了する</span>
+}
+    echo $i;　<span class="h">// 結果：12345</span>
+}</pre>
+            </div>
+            <br><br><br>
+
+            <b>■continue文</b><br>
+            ループの特定の週だけスキップする（丸ごと中断したい場合は上記break文を使おう）<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">for($i=1; Si&lt;=10; $1++) {
+    if($i % 3 == 0) {
+    continue;　<span class="h">// この条件だと3の倍数だけスキップする</span>
+}
+    echo $i;　<span class="h">// 結果：12457810</span>
+}</pre>
+            </div>
+            <br><br><br>
+
+            <b>■関数</b><br>
+            あるまとまった処理を行い、値を返すもの<br>
+            PHPには組み込み関数がいっぱいある<br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;"><span class="h">// 文字列の文字数を返すstrlen</span>
+echo strlen(&quot;この中に入るものは引数という&quot;);　<span class="h">// 結果：7</span>
+$text = &quot;変数もつっこめるよ&quot;;
+echo strlen($text);　<span class="h">// 結果：7</span>
+
+<span class="h">// 配列の要素の数を返すcount</span>
+$names = array(&quot;Maria&quot;,&quot;Abbie&quot;,&quot;Bunyan&quot;);
+echo count($data);　<span class="h">// 結果：3</span>
+
+<span class="h">// ランダムに値を返すrand</span>
+echo rand(1,4)　　<span class="h">// 結果：1～4の間からランダムに一つ</span>
+
+<span class="h">// 関数を自作する</span>
+<span class="h">// function 関数名(){ 処理 }で関数を作ることができる</span>
+function hello() {
+    echo &quot;Hello muscle!&quot;;
+}
+hello();　<span class="h">// 結果：Hello muscle!</span>
+
+function printsum($num1,$num2) {
+    echo $num1+$num2;
+}
+printsum(1,5);　<span class="h">// 結果：6</span></pre>
+            </div>
+            <br><br><br>
+
+
+            <b>■戻り値</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;">function getsum($num1,$num2) {
+    return $num1+$num2;　<span class="h">// ここが戻り値</span>
+}
+$sum = getsum(1,5);
+echo $sum　<span class="h">// 結果：6</span></pre>
+            </div>
+            <br><br><br>
+
+            <b>■</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;"></pre>
+            </div>
+            <br><br><br>
+
+
+            <b>■</b><br>
+            <div class="kuro sourceview">
+                <pre class="brush: html;"></pre>
+            </div>
+            <br><br><br>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
