@@ -194,6 +194,14 @@ nav li:hover {
     background-color: #c7ffa6c0;
 }
 
+.nav_react ul li.current {
+    background-color: rgba(139, 227, 243, 0.911);
+}
+
+.nav_react ul li:hover {
+    background-color: #ffb3a6c0;
+}
+
 /* -------------------------------------------------- */
 
 /* ■TOP＞メイン------------------------------------ */
@@ -312,6 +320,15 @@ nav li:hover {
 }
 
 .box-php:hover {
+    filter: drop-shadow(0 7px 7px rgba(155, 166, 167, 0.747));
+}
+
+.box-react {
+    color: #70727c;
+    border-top: solid 5px #8BE4F3;
+}
+
+.box-react:hover {
     filter: drop-shadow(0 7px 7px rgba(155, 166, 167, 0.747));
 }
 
