@@ -20,7 +20,7 @@
         <script type="text/javascript">
             header_dayo();
         </script>
-        
+
         <br><br><br>
 
         <!-- メイン -->
@@ -53,6 +53,20 @@
             全はアナル、アナルは全。つまりヨグ=ソトース、はっきりわかんだね。<br><br><br>
 
 
+            <b>■SELECT文</b>　データの取得<br>
+            <div class="kuro2 sourceview">
+                <pre class="brush: html;">
+SELECT カラムA,カラムB,… FROM テーブル名 WHERE 条件文;</pre>
+            </div>
+            例
+            <div class="kuro2 sourceview">
+                <pre class="brush: html;">SELECT * FROM user WHERE gender="male";</pre>
+            </div>
+            <div class="memo">NULLが入っている部分のデータを取得したい場合は<br>
+                SELECT カラムA,カラムB,… FROM テーブル名 WHERE 該当のカラム IS NULL;<br>
+                と記述する。WHERE 該当のカラム=NULLだと取れない。<br>
+                NULLが要らない場合はWHERE 該当のカラム IS NOT NULL;にすればOK</div><br><br>
+
 
             <a id="flask_kihon"><b>■INSERT文</b></a>　データの追加<br>
             <div class="kuro2 sourceview">
@@ -61,8 +75,9 @@ INSERT INTO テーブル名(カラムA,カラムB,…) VALUES('カラムAに入�
             </div>
             例
             <div class="kuro2 sourceview">
-                <pre class="brush: html;"></pre>
-            </div><br><br><br>
+                <pre class="brush: html;">INSERT INTO user(name,age,gender) VALUES('Genya',16,'male');
+<span class="h">-- テキスト型(上記だとname,gender)に入れたい情報は''で囲み、数字は囲まずにそのまま(age)</span></pre>
+            </div><br><br>
 
 
 
@@ -73,21 +88,8 @@ UPDATE テーブル名 SET 更新処理 WHERE 条件文;</pre>
             </div>
             例
             <div class="kuro2 sourceview">
-                <pre class="brush: html;"></pre>
-            </div><br><br><br>
-
-
-
-            <b>■SELECT文</b>　データの取得<br>
-            <div class="kuro2 sourceview">
-                <pre class="brush: html;">
-SELECT カラムA,カラムB,… FROM テーブル名 WHERE 条件文;</pre>
-            </div>
-            例
-            <div class="kuro2 sourceview">
-                <pre class="brush: html;"></pre>
-            </div><br><br><br>
-
+                <pre class="brush: html;">UPDATE user SET name="Sumiko",gender="female?" WHERE id=1;</pre>
+            </div><br><br>
 
 
 
@@ -98,30 +100,35 @@ DELETE FROM テーブル名 WHERE 条件文;</pre>
             </div>
             例
             <div class="kuro2 sourceview">
-                <pre class="brush: html;"></pre>
+                <pre class="brush: html;">DELETE FROM user WHERE id=1;
+<span class="h">-- WHEREで消す部分を指定しないと全部消えてしまうので注意！</span></pre>
             </div><br><br><br>
 
 
-
-
-            <a id="flask_ketugo"><b>■テーブルの結合</b></a>　がっちゃんこ<br>
-            <b>内部結合</b><br>
+            <b>■AND演算子</b>　複数の条件を指定したい<br>
             <div class="kuro2 sourceview">
-                <pre class="brush: html;">
-SELECT カラムA, カラムB,… FROM テーブル名A
-    INNER JOIN テーブル名B ON 結合の条件;
-    <span class="h">// 内部結合の場合、ベースとなるテーブルから、条件にマッチするレコードがないものは削除される</span></pre>
-            </div>
-            <b>外部結合</b><br>
-            <div class="kuro2 sourceview">
-                <pre class="brush: html;">
-SELECT カラムA, カラムB,… FROM テーブル名A
-    <span class="h">// LEFTは左側のテーブルを、RIGHTは右側のテーブルを軸にして結合</span>
-    LEFT(RIGHT) OUTER JOIN テーブル名B ON 結合の条件;</pre>
+                <pre class="brush: html;">SELECT カラムA,カラムB,… FROM テーブル名 
+WHERE 条件文1
+AND 条件文2;</pre>
             </div>
             例
             <div class="kuro2 sourceview">
-                <pre class="brush: html;"></pre>
+                <pre class="brush: html;">SELECT * FROM user 
+WHERE age=16
+AND gender="male";</pre>
+            </div><br><br>
+
+            <b>■OR演算子</b>　条件のどれかに該当するやつ全部選択したい<br>
+            <div class="kuro2 sourceview">
+                <pre class="brush: html;">SELECT カラムA,カラムB,… FROM テーブル名 
+WHERE 条件文1
+OR 条件文2;</pre>
+            </div>
+            例
+            <div class="kuro2 sourceview">
+                <pre class="brush: html;">SELECT * FROM user 
+WHERE age=16
+OR gender="male";</pre>
             </div><br><br><br>
 
 
@@ -130,11 +137,11 @@ SELECT カラムA, カラムB,… FROM テーブル名A
             <div class="kuro2 sourceview">
                 <pre class="brush: html;">
 SELECT カラムA,カラムB,… FROM テーブル名 ORDER BY ソートしたいカラム 順番の指定;
-<span class="h">// 順番の指定……ASC(昇順)、DESC(降順)</span></pre>
+<span class="h">-- 順番の指定……ASC(昇順)、DESC(降順)</span></pre>
             </div>
             例
             <div class="kuro2 sourceview">
-                <pre class="brush: html;"></pre>
+                <pre class="brush: html;">SELECT * FROM user ORDER BY age ASC;</pre>
             </div><br><br><br>
 
 
@@ -142,7 +149,30 @@ SELECT カラムA,カラムB,… FROM テーブル名 ORDER BY ソートした�
             <div class="kuro2 sourceview">
                 <pre class="brush: html;">
 SELECT カラムA,カラムB,… FROM テーブル名 LIMIT 取り出したい数;
-<span class="h">// ORDER BYでソートしてからやると良い感じに。LIMITつける位置は一番最後</span></pre>
+<span class="h">-- ORDER BYでソートしてからやると良い感じに。LIMITつける位置は一番最後
+-- WHEREとも併用できるよ
+</span></pre>
+            </div>
+            例
+            <div class="kuro2 sourceview">
+                <pre class="brush: html;">SELECT * FROM user ORDER BY id DESC LIMIT 3;</pre>
+            </div><br><br><br>
+
+
+            <a id="flask_ketugo"><b>■テーブルの結合</b></a>　がっちゃんこ<br>
+            <b>内部結合</b><br>
+            <div class="kuro2 sourceview">
+                <pre class="brush: html;">
+SELECT カラムA, カラムB,… FROM テーブル名A
+    INNER JOIN テーブル名B ON 結合の条件;
+    <span class="h">-- 内部結合の場合、ベースとなるテーブルから、条件にマッチするレコードがないものは削除される</span></pre>
+            </div>
+            <b>外部結合</b><br>
+            <div class="kuro2 sourceview">
+                <pre class="brush: html;">
+SELECT カラムA, カラムB,… FROM テーブル名A
+    <span class="h">-- LEFTは左側のテーブルを、RIGHTは右側のテーブルを軸にして結合</span>
+    LEFT(RIGHT) OUTER JOIN テーブル名B ON 結合の条件;</pre>
             </div>
             例
             <div class="kuro2 sourceview">
@@ -179,7 +209,7 @@ FROM テーブル名;</pre>
 
 
 
-            <b>■曖昧検索</b>　LIKE<br>
+            <b>■曖昧検索</b>　LIKE　%がワイルドカード(どんな文字列にも一致することを指す記号)になる<br>
             <div class="kuro2 sourceview">
                 <pre class="brush: html;">
 SELECT カラムA,カラムB,… FROM テーブル名 WHERE 検索に使うカラム LIKE 曖昧検索の条件;
@@ -209,7 +239,7 @@ SELECT カラムA,カラムB,… FROM テーブル名 WHERE 検索に使うカ�
                 <pre class="brush: html;"></pre>
             </div><br><br><br>
 
-            <b>■</b>　<br>
+            <!-- <b>■</b>　<br>
             <div class="kuro2 sourceview">
                 <pre class="brush: html;"></pre>
             </div>
@@ -225,7 +255,7 @@ SELECT カラムA,カラムB,… FROM テーブル名 WHERE 検索に使うカ�
             例
             <div class="kuro2 sourceview">
                 <pre class="brush: html;"></pre>
-            </div><br><br><br>
+            </div><br><br><br> -->
 
         </div>
     </div>
